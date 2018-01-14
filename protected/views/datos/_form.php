@@ -20,7 +20,7 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'nombres'); ?>
+		<?php echo $form->labelEx($model,'Nombres'); ?>
 		<?php echo $form->textField($model,'nombres',array('size'=>50,'maxlength'=>50)); ?>
 		<?php echo $form->error($model,'nombres'); ?>
 	</div>
