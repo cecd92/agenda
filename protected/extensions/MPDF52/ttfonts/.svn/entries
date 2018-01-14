@@ -1,0 +1,28 @@
+10
+
+dir
+0
+svn://svn.mtt.gob.ve/obra/trunk/protected/extensions/MPDF52/ttfonts
+svn://svn.mtt.gob.ve/obra
+add
+
+
+
+
+
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+48cb3231-ebbb-4cf2-82de-e215239d1069
+

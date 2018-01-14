@@ -1,0 +1,31 @@
+    <?php
+    
+    $pdf = Yii::createComponent('application.extensions.MPDF52.mpdf');
+    $html='
+<br>
+<br>
+<br>
+<br>
+    <link rel="stylesheet" type="text/css" href="'.Yii::app()->request->baseUrl.'/css/pdf.css" />
+        <div class="CSSTableGenerator" >
+    <table id="yw0">
+          <tr >
+                <td id="uno" color="white" colspan="2" align="center"><b>DATOS DEL CONTACTO</b></td>
+          <tr>
+          <tr></tr>
+          <tr><td> <b>Nombres:</b> </td><td> '.$model->nombres.'</td></tr>
+          <tr><td id="dos"> <b>Apellidos:</b> </td><td id="dos"> '.$model->apellidos.'</td></tr>
+         <tr><td> <b>Fecha de Nacimiento:</b> </td><td> '.$model->fecha_nacimiento.'</td></tr>
+          <tr><td id="tres"> <b>Telefono:</b> </td><td id="tres"> '.$model->telefono.'</td></tr>
+        
+
+    </table>
+    </div>';
+    $header=$header.'<img align="center" src="'.Yii::app()->request->baseUrl.'/images/banner.jpg" />';
+    $mpdf=new mPDF('win-1252','LETTER','','',15,15,25,12,5,7);
+    $mpdf->SetHTMLHeader($header);
+    $mpdf->SetFooter('Generado el: '.$row["usuario"].' {DATE j/m/Y}|Página {PAGENO}/{nbpg}|Agenda Castillo');
+    $mpdf->WriteHTML($html);
+    $mpdf->Output('Ficha-Nomina-.pdf','I');
+    exit;
+    ?>
